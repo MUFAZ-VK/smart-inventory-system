@@ -17,7 +17,7 @@ SECRET_KEY = 'django-insecure-dev-key-change-in-production-12345'
 DEBUG = True
 
 # Allowed hosts - add your domain here in production
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 # These are the apps installed in this Django project
@@ -109,7 +109,8 @@ USE_I18N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = 'static/'
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "static"
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
