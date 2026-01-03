@@ -14,7 +14,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-dev-key-change-in-production-12345'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
 
 # Allowed hosts - add your domain here in production
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.koyeb.app']
@@ -111,8 +112,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
+    # Fallback/Source path for dev - may not exist in prod but safe to keep
     BASE_DIR.parent / 'frontend' / 'dist',
 ]
 # Enable Whitenoise storage (no manifest required as Vite handles hashing)
