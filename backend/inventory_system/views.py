@@ -8,7 +8,9 @@ def serve_react(request):
     In production (Docker), this file is located at /static/index.html.
     """
     # Primary path for production (Docker)
-    path = os.path.join('/static', 'index.html')
+    # in Dockerfile: COPY --from=frontend /frontend/dist ./static
+    # BASE_DIR is /app, so this resolves to /app/static/index.html
+    path = os.path.join(settings.BASE_DIR, 'static', 'index.html')
 
     # Check if the production file exists
     if not os.path.exists(path):
