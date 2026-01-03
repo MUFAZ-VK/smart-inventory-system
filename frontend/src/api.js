@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 // Base URL for the Django backend API
-// Change this to match your Django server address
-const API_BASE_URL = 'http://localhost:8000/api';
+// Use relative path in production (same domain), or localhost for dev if running separately
+const API_BASE_URL = import.meta.env.PROD ? '/api' : 'http://localhost:8000/api';
 
 // Create an axios instance with default configuration
 const api = axios.create({
@@ -21,11 +21,11 @@ api.interceptors.request.use(
       .split('; ')
       .find(row => row.startsWith('csrftoken='))
       ?.split('=')[1];
-    
+
     if (csrftoken) {
       config.headers['X-CSRFToken'] = csrftoken;
     }
-    
+
     return config;
   },
   (error) => {
