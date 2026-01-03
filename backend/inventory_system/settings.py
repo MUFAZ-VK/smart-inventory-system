@@ -152,6 +152,6 @@ CORS_ALLOW_CREDENTIALS = True
 
 # CSRF Trusted Origins - Required for Django admin login in production
 CSRF_TRUSTED_ORIGINS = [
-    'https://nutty-meerkat-haca-44179d4f.koyeb.app',
+    'https://alert-jori-haca-15a870ad.koyeb.app',
 ]
 
