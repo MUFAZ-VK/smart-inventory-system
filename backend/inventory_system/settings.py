@@ -147,5 +147,11 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOW_ALL_ORIGINS = True  # Set to False in production
 
 # Allow credentials (cookies, session) to be sent with requests
+# Allow credentials (cookies, session) to be sent with requests
 CORS_ALLOW_CREDENTIALS = True
+
+# CSRF Trusted Origins - Required for Django admin login in production
+CSRF_TRUSTED_ORIGINS = [
+    'https://nutty-meerkat-haca-44179d4f.koyeb.app',
+]
 
